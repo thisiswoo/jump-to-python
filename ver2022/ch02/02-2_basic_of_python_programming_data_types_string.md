@@ -89,7 +89,117 @@ print(weather) # Rainy
 ```
 
 ```shell
-a[  이상  :  미만  :  간격  ] 
+a[  이상  :  미만  :  간격(기본값 1)  ] 
 ```
 
 $이상 \ \leq x < 미만 \ 간격(default \ 1)$
+
+### 문자열 포매팅(formatting)
+```python
+a = "I eat %d apples." % 3
+
+print(a) # I eat 3 apples.
+```
+
+```python
+number = 10
+day = "three"
+a = "I ate %d apples. so I was sick for %s days." % (number, day)
+b = "I ate %s apples. so I was sick for %s days." % (number, day)
+c = "abcdefghijklmn {} opqrstuvwxyz".format("안녕")
+d = "abc {age} defghijklmn {hoho} opqrstuvwxyz".format(hoho="호호", age=2)
+
+name = "int"
+e = f"나의 이름은 {name}입니다"
+
+print(a) # I ate 10 apples. so I was sick for three days.
+print(b) # I ate 10 apples. so I was sick for three days.
+print(c) # abcdefghijklmn 안녕 opqrstuvwxyz
+print(d) # abc 2 defghijklmn 호호 opqrstuvwxyz
+print(e) # 나의 이름은 int입니다
+```
+
+#### 문자열 포맷 코드
+
+| 코드   | 설명                    |
+|------|-----------------------|
+| `%s` | 문자열(String)           |
+| `%c` | 문자 1개(Character)      |
+| `%d` | 정수(Integer)           |
+| `%f` | 부동 소수(Floating-point) |
+| `%o` | 8진수                   |
+| `%x` | 16진수                  |
+| `%%` | Literal % (문자 '%' 자체) |
+
+### 소수점 표현
+```python
+# 간격.소수점 남기는 자리 수
+a = "%0.4f" % 3.42134234
+
+print(a) # 3.4213
+```
+
+### 문자열 개수 세기(count)
+```python
+a = "hobby"
+
+print(a.count('b')) # 2
+```
+
+### 문자열 위치 알려주기1 (find)
+```python
+a = "Python is best choice"
+
+print(a.find('b')) # 10
+print(a.find('x')) # -1
+```
+
+### 문자열 위치 알려주기2 (index)
+```python
+a = "Life is too short"
+
+print(a.index('t')) # 8
+print(a.index(''))  # 0
+print(a.index('k')) # ValueError: substring not found
+```
+
+### 문자열 삽입(join)
+```python
+a = ","
+b = ",".join(["a", "b", "c"])
+
+print(a.join('abcd')) # a,b,c,d
+print(b) # a,b,c
+```
+
+### 문자열 소문자를 대문자(upper)와 소문자(lower)로 바꾸기
+```python
+a = "hi"
+b = "HELLO"
+
+print(a.upper()) # HI
+print(b.lower()) # hello
+```
+
+### 양쪽 공백 지우기(strip)
+```python
+a = "       hi     "
+
+print(a.strip()) # hi
+```
+
+### 문자열 바꾸기(replace)
+```python
+a = "Life is too short"
+
+print(a.replace("Life", "Your leg")) # Your leg is too short
+```
+
+### 문자열 나누기(split)
+```python
+a = "Life is too short"
+b = "a:b:c:d"
+
+print(a.split()) # ['Life', 'is', 'too', 'short'] 
+print(b.split(":")) # ['a', 'b', 'c', 'd'] 
+```
