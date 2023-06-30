@@ -92,4 +92,4 @@ print(weather) # Rainy
 a[  이상  :  미만  :  간격  ] # a[이상
 ```
 
-이상 \leq x < 미만 간격(default 1)
+$이상 \leq x < 미만 간격(default 1)$
